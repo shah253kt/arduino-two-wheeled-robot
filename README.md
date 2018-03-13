@@ -9,10 +9,10 @@ You may download the library [here] {https://github.com/shah253kt/arduino-motor}
 This constructor uses pointers to the left and right motors.
 
 Usage:
-...cpp
+```cpp
 Motor leftMotor(4, 5), rightMotor(7, 6);
 TwoWheeledRobot robot(&leftMotor, &rightMotor);
-...
+```
 
 ### Forward/Backward
 **forward**(byte leftPwm, byte rightPwm);
@@ -20,12 +20,12 @@ TwoWheeledRobot robot(&leftMotor, &rightMotor);
 These functions causes both motors move forward and backward. If you notice any or both of the motors turning the wrong way, simply call `inverseDirection` function on the motor itself.
 
 Usage:
-...cpp
+```cpp
 robot.forward(255, 255);
 
 //If left motor is turning the wrong way, call this function in Arduino setup function:
 leftMotor.inverseDirection();
-...
+```
 
 ### Turn Right/Left
 **turnRight**(byte leftPwm, byte rightPwm);
@@ -33,26 +33,26 @@ leftMotor.inverseDirection();
 These functions are suitable for tank-like configuration which allows you to rotate the robot in fixed position where one motor is turning in different direction from the other.
 
 Usage:
-...cpp
+```cpp
 robot.turnRight(255, 255);
 
 robot.turnLeft(255, 255);
-...
+```
 
 ### Stop
 **stop**();
 To stop both motors.
 
 Usage:
-...cpp
+```cpp
 robot.stop();
-...
+```
 
 ### Move
 **stop**(short leftSpeed, short rightSpeed);
 This function allows you to supply negative values for the pwm. Negative values will cause the motor to turn backward and vice versa.
 
 Usage:
-...cpp
+```cpp
 robot.move(-100, 150);
-...
+```
